@@ -39,6 +39,16 @@ app.get('/delete/:id', (req, res) => {
     }
 })
 
+app.get('/deleteFin/:id', (req, res) => {
+    const key = req.params.id
+    if (toDoStorage.finished.hasOwnProperty(key)) {
+        delete toDoStorage.finished[key]
+        res.send({ deleted: true, toDoStorage })
+    } else {
+        res.send({ deleted: false, toDoStorage: {} })
+    }
+})
+
 app.post('/add', (req, res) => {
     const { text = "" } = req.body
     if (text) {
