@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express()
 
-const port = 5000
+const port = 3000
 let ID = 0
 const toDoStorage = {
     finished: {
@@ -72,6 +72,6 @@ app.get('/list', (req, res) => {
 })
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`ToDo app listening at http://localhost:${port}`)
 })
