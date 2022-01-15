@@ -1,5 +1,8 @@
 const express = require('express')
+const path = require('path');
+
 const app = express()
+
 const port = 5000
 let ID = 0
 const toDoStorage = {
@@ -12,6 +15,8 @@ const toDoStorage = {
 }
 
 app.use(express.json());
+
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 
 app.get('/finish/:id', (req, res) => {
