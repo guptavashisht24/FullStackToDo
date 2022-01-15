@@ -16,7 +16,7 @@ const toDoStorage = {
 
 app.use(express.json());
 
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use(express.static(path.resolve(__dirname, '../todofrontend/build')));
 
 
 app.get('/finish/:id', (req, res) => {
