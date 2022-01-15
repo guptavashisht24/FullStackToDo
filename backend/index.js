@@ -52,7 +52,7 @@ app.post('/add', (req, res) => {
 })
 
 
-app.get('/', (req, res) => {
+app.get('/list', (req, res) => {
     res.send(toDoStorage)
 })
 
